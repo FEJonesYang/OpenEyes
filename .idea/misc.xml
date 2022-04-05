@@ -1,6 +1,43 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_8" default="true" project-jdk-name="1.8" project-jdk-type="JavaSDK">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="../../.gradle/caches/transforms-3/1799890d36ea2fc5fda7905675096f2e/transformed/jetified-TingPhoneOpenSDK-8.0.9/res/layout/activity_reward_video_ad.xml" value="0.5036458333333333" />
+        <entry key="../../.gradle/caches/transforms-3/1799890d36ea2fc5fda7905675096f2e/transformed/jetified-TingPhoneOpenSDK-8.0.9/res/layout/dialog_alert.xml" value="0.5036458333333333" />
+        <entry key="../../.gradle/caches/transforms-3/b9dae5d6240afd16b116236287ad6172/transformed/jetified-windAd-3.5.0/res/drawable/sig_cta_bg.xml" value="0.5416666666666666" />
+        <entry key="../../.gradle/caches/transforms-3/b9dae5d6240afd16b116236287ad6172/transformed/jetified-windAd-3.5.0/res/drawable/sig_dislike_suggest_ev.xml" value="0.5416666666666666" />
+        <entry key="../../.gradle/caches/transforms-3/b9dae5d6240afd16b116236287ad6172/transformed/jetified-windAd-3.5.0/res/drawable/sig_image_video_background_white.xml" value="0.5416666666666666" />
+        <entry key="../../.gradle/caches/transforms-3/b9dae5d6240afd16b116236287ad6172/transformed/jetified-windAd-3.5.0/res/drawable/sig_video_bottom_progress.xml" value="0.5416666666666666" />
+        <entry key="../../.gradle/caches/transforms-3/b9dae5d6240afd16b116236287ad6172/transformed/jetified-windAd-3.5.0/res/layout/sig_app_info_layout.xml" value="0.5213541666666667" />
+        <entry key="../../.gradle/caches/transforms-3/b9dae5d6240afd16b116236287ad6172/transformed/jetified-windAd-3.5.0/res/layout/sig_app_layout.xml" value="0.5213541666666667" />
+        <entry key="../../.gradle/caches/transforms-3/b9dae5d6240afd16b116236287ad6172/transformed/jetified-windAd-3.5.0/res/layout/sig_dislike_layout.xml" value="0.5213541666666667" />
+        <entry key="../../.gradle/caches/transforms-3/b9dae5d6240afd16b116236287ad6172/transformed/jetified-windAd-3.5.0/res/layout/sig_shake_view_layout.xml" value="0.5390625" />
+        <entry key="../../.gradle/caches/transforms-3/b9dae5d6240afd16b116236287ad6172/transformed/jetified-windAd-3.5.0/res/layout/sig_video_player_layout.xml" value="0.5213541666666667" />
+        <entry key="app/src/main/res/layout/activity_main.xml" value="0.5364583333333334" />
+        <entry key="module-community/src/main/res/layout/fragment_community.xml" value="0.2512820512820513" />
+        <entry key="module-home/src/main/res/layout/fragment_home.xml" value="0.2512820512820513" />
+        <entry key="module-home/src/main/res/layout/fragment_notification.xml" value="0.2557291666666667" />
+        <entry key="module-home/src/main/res/layout/fragment_recommend.xml" value="0.2651282051282051" />
+        <entry key="module-main/src/main/res/drawable/ic_dashboard_black_24dp.xml" value="0.21944444444444444" />
+        <entry key="module-main/src/main/res/drawable/ic_home_black_24dp.xml" value="0.21944444444444444" />
+        <entry key="module-main/src/main/res/drawable/ic_notifications_black_24dp.xml" value="0.21944444444444444" />
+        <entry key="module-main/src/main/res/layout/activity_main.xml" value="0.25" />
+        <entry key="module-main/src/main/res/layout/activity_main2.xml" value="0.22592592592592592" />
+        <entry key="module-main/src/main/res/layout/content_main.xml" value="0.22592592592592592" />
+        <entry key="module-main/src/main/res/layout/fragment_community.xml" value="0.22592592592592592" />
+        <entry key="module-main/src/main/res/layout/fragment_dashboard.xml" value="0.22592592592592592" />
+        <entry key="module-main/src/main/res/layout/fragment_home.xml" value="0.22592592592592592" />
+        <entry key="module-main/src/main/res/layout/fragment_notifications.xml" value="0.22592592592592592" />
+        <entry key="module-main/src/main/res/layout/fragment_user.xml" value="0.22592592592592592" />
+        <entry key="module-main/src/main/res/layout/fragment_ximalaya.xml" value="0.22592592592592592" />
+        <entry key="module-main/src/main/res/menu/bottom_nav_menu.xml" value="0.1" />
+        <entry key="module-user/src/main/res/layout/fragment_user.xml" value="0.25833333333333336" />
+        <entry key="module-ximalaya/src/main/res/layout/fragment_ximalaya.xml" value="0.2512820512820513" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" project-jdk-name="1.8" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/build/classes" />
   </component>
   <component name="ProjectType">

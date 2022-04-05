@@ -3,17 +3,18 @@ dependencyResolutionManagement {
     repositories {
         google()
         mavenCentral()
-        jcenter() // Warning: this repository is going to shut down soon
     }
 }
 rootProject.name = "OpenEyes"
 include ':app'
 include ':library-network'
 include ':library-base'
-include ':library-commom'
-include ':mudule-home'
+include ':library-common'
+include ':module-home'
 include ':module-main'
-include ':mudule-community'
-include ':mudule-user'
+include ':module-community'
+include ':module-user'
 include ':library-servicemanager'
 include ':library-utils'
+include ':library-ui'
+include ':module-ximalaya'

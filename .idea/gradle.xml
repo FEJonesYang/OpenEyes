@@ -7,19 +7,22 @@
         <option name="testRunner" value="GRADLE" />
         <option name="distributionType" value="DEFAULT_WRAPPED" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="gradleJvm" value="11" />
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/app" />
             <option value="$PROJECT_DIR$/library-base" />
-            <option value="$PROJECT_DIR$/library-commom" />
+            <option value="$PROJECT_DIR$/library-common" />
             <option value="$PROJECT_DIR$/library-network" />
             <option value="$PROJECT_DIR$/library-servicemanager" />
+            <option value="$PROJECT_DIR$/library-ui" />
             <option value="$PROJECT_DIR$/library-utils" />
+            <option value="$PROJECT_DIR$/module-community" />
+            <option value="$PROJECT_DIR$/module-home" />
             <option value="$PROJECT_DIR$/module-main" />
-            <option value="$PROJECT_DIR$/mudule-community" />
-            <option value="$PROJECT_DIR$/mudule-home" />
-            <option value="$PROJECT_DIR$/mudule-user" />
+            <option value="$PROJECT_DIR$/module-user" />
+            <option value="$PROJECT_DIR$/module-ximalaya" />
           </set>
         </option>
         <option name="resolveModulePerSourceSet" value="false" />
