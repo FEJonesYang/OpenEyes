@@ -67,6 +67,9 @@ dependencies {
     api rootProject.ext.androidx['livedata-ktx']
     api rootProject.ext.androidx['viewmodel-ktx']
 
+    // 协程
+    api rootProject.ext.androidx['kotlinx-coroutines']
+
     // 喜马拉雅依赖
     api fileTree(dir: 'libs', includes: ['*.aar'])
     api fileTree(dir: 'libs', includes: ['*.jar'])
