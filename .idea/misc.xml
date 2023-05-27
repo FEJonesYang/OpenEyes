@@ -14,6 +14,23 @@
         <entry key="../../.gradle/caches/transforms-3/b9dae5d6240afd16b116236287ad6172/transformed/jetified-windAd-3.5.0/res/layout/sig_dislike_layout.xml" value="0.5213541666666667" />
         <entry key="../../.gradle/caches/transforms-3/b9dae5d6240afd16b116236287ad6172/transformed/jetified-windAd-3.5.0/res/layout/sig_shake_view_layout.xml" value="0.5390625" />
         <entry key="../../.gradle/caches/transforms-3/b9dae5d6240afd16b116236287ad6172/transformed/jetified-windAd-3.5.0/res/layout/sig_video_player_layout.xml" value="0.5213541666666667" />
+        <entry key="..\:/Android_Project/OpenEyes/library-ui/src/main/res/layout/fragment_user.xml" value="0.24947916666666667" />
+        <entry key="..\:/Android_Project/OpenEyes/library-ui/src/main/res/layout/network_error_layout.xml" value="0.264" />
+        <entry key="..\:/Android_Project/OpenEyes/library-ui/src/main/res/layout/network_loading_layout.xml" value="0.24947916666666667" />
+        <entry key="..\:/Android_Project/OpenEyes/library-ui/src/main/res/layout/network_no_more.xml" value="0.536" />
+        <entry key="..\:/Android_Project/OpenEyes/module-community/src/main/res/layout/fragment_community.xml" value="0.23541666666666666" />
+        <entry key="..\:/Android_Project/OpenEyes/module-home/src/main/res/layout/fragment_home.xml" value="0.1" />
+        <entry key="..\:/Android_Project/OpenEyes/module-home/src/main/res/layout/fragment_recommend.xml" value="0.2151268115942029" />
+        <entry key="..\:/Android_Project/OpenEyes/module-main/src/main/res/layout/activity_main.xml" value="0.23541666666666666" />
+        <entry key="..\:/Android_Project/OpenEyes/module-main/src/main/res/menu/bottom_nav_menu.xml" value="0.23541666666666666" />
+        <entry key="..\:/Android_Project/OpenEyes/module-user/src/main/res/layout/fragment_user.xml" value="0.2151268115942029" />
+        <entry key="..\:/Android_Project/OpenEyes/module-ximalaya/src/main/res/drawable/shape_album_item_bg.xml" value="0.2105" />
+        <entry key="..\:/Android_Project/OpenEyes/module-ximalaya/src/main/res/layout/fragment_history.xml" value="0.24947916666666667" />
+        <entry key="..\:/Android_Project/OpenEyes/module-ximalaya/src/main/res/layout/fragment_recommend.xml" value="0.2151268115942029" />
+        <entry key="..\:/Android_Project/OpenEyes/module-ximalaya/src/main/res/layout/fragment_subscription.xml" value="0.24947916666666667" />
+        <entry key="..\:/Android_Project/OpenEyes/module-ximalaya/src/main/res/layout/fragment_ximalaya.xml" value="0.1" />
+        <entry key="..\:/Android_Project/OpenEyes/module-ximalaya/src/main/res/layout/fragment_ximalaya_recommend.xml" value="0.24947916666666667" />
+        <entry key="..\:/Android_Project/OpenEyes/module-ximalaya/src/main/res/layout/item_recommend_layout.xml" value="0.264" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.5364583333333334" />
         <entry key="module-community/src/main/res/layout/fragment_community.xml" value="0.2512820512820513" />
         <entry key="module-home/src/main/res/layout/fragment_home.xml" value="0.2512820512820513" />

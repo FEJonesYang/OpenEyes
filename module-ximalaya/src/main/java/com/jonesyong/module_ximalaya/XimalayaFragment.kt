@@ -1,44 +1,46 @@
 package com.jonesyong.module_ximalaya
 
 import android.os.Bundle
-import android.view.LayoutInflater
 import android.view.View
-import android.view.ViewGroup
-import android.widget.TextView
-import androidx.fragment.app.Fragment
-import androidx.lifecycle.Observer
-import androidx.lifecycle.ViewModelProvider
+import com.google.android.material.tabs.TabLayoutMediator
+import com.jonesyong.library_base.BaseFragment
+import com.jonesyong.library_base.DataBindingConfig
 import com.jonesyong.module_ximalaya.databinding.FragmentXimalayaBinding
+import com.jonesyong.module_ximalaya.ui.adapters.XimalayaFragmentPageAdapter
 
-class XimalayaFragment : Fragment() {
+class XimalayaFragment : BaseFragment() {
 
-    private lateinit var dashboardViewModel: XimalayaViewModel
-    private var _binding: FragmentXimalayaBinding? = null
+    private lateinit var mStateModel: XimalayaViewModel
+    private lateinit var mDataBinding: FragmentXimalayaBinding
 
-    // This property is only valid between onCreateView and
-    // onDestroyView.
-    private val binding get() = _binding!!
+    override fun initViewModel() {
+        mStateModel = getFragmentScopeViewModel(XimalayaViewModel::class.java)
+    }
 
-    override fun onCreateView(
-        inflater: LayoutInflater,
-        container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
-        dashboardViewModel =
-            ViewModelProvider(this).get(XimalayaViewModel::class.java)
+    override fun getDataBindingConfig(): DataBindingConfig {
+        return DataBindingConfig(R.layout.fragment_ximalaya, BR.vm, mStateModel)
+            .addBindingParam(
+                BR.adapter,
+                XimalayaFragmentPageAdapter(parentFragmentManager, lifecycle)
+            )
+    }
 
-        _binding = FragmentXimalayaBinding.inflate(inflater, container, false)
-        val root: View = binding.root
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        mDataBinding = mBinding as FragmentXimalayaBinding
+        mDataBinding.viewPagerXimalaya.adapter =
+            mBindingConfig.bindingParams.get(BR.adapter) as XimalayaFragmentPageAdapter
 
-        val textView: TextView = binding.textDashboard
-        dashboardViewModel.text.observe(viewLifecycleOwner, Observer {
-            textView.text = it
-        })
-        return root
+        // 关联 ViewPager 和 TabLayout
+        TabLayoutMediator(
+            mDataBinding.tabXimalaya,
+            mDataBinding.viewPagerXimalaya
+        ) { tab, position ->
+            tab.text = mStateModel.tabList[position]
+        }.attach()
     }
 
     override fun onDestroyView() {
         super.onDestroyView()
-        _binding = null
     }
 }

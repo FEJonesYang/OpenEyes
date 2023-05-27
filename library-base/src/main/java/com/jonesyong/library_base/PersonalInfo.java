@@ -17,11 +17,11 @@ import java.util.Properties;
  */
 public class PersonalInfo {
     // appKey
-    public static final String appKey = "b58613360ba3abdbe6559eea75151713";
+    public static final String appKey = "af1d317b871e0e7e2ce45872caa34d9a";
 
     // appSecret,不可以公开
-    public static final String appSecret = "69175baa9a690a0664656d6a9d811329";
+    public static final String appSecret = "afe063d2e6df361bc9f1fb8bb8210d67";
 
     // package name
-    public static final String packName = "com.jonesyong.openeyes";
+    public static final String packName = "com.humaxdigital.automotive.ximalaya";
 }

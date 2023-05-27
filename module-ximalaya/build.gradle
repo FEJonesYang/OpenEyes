@@ -1,4 +1,9 @@
 apply from:'../module.build.gradle'
+apply plugin: 'org.jetbrains.kotlin.android'
+apply plugin: 'kotlin-kapt'
+kapt {
+    generateStubs = true
+}
 
 android {
     compileSdk rootProject.ext.android['compileSdkVersion']
@@ -27,13 +32,19 @@ android {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
     }
+
     kotlinOptions {
         jvmTarget = '1.8'
+    }
+
+    dataBinding {
+        enabled = true
     }
 }
 
 dependencies {
     implementation project(':library-common')
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
 
     // 阿里路由组件跳转
     annotationProcessor rootProject.ext.dependencies['arouter-compiler']

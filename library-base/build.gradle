@@ -47,6 +47,11 @@ android {
     packagingOptions {
         exclude 'META-INF/*'
     }
+
+    dataBinding {
+        enabled = true
+    }
+
 }
 
 dependencies {
@@ -63,16 +68,18 @@ dependencies {
     api rootProject.ext.androidx['viewmodel-ktx']
 
     // 喜马拉雅依赖
-    implementation fileTree(dir: 'libs', includes: ['*.aar'])
+    api fileTree(dir: 'libs', includes: ['*.aar'])
+    api fileTree(dir: 'libs', includes: ['*.jar'])
 
     // 第三方依赖导入
     api rootProject.ext.dependencies['arouter-api']
     api rootProject.ext.dependencies['glide']
+    api rootProject.ext.dependencies['glide-compiler']
     api rootProject.ext.dependencies['okhttp3']
     api rootProject.ext.dependencies['okio']
     api rootProject.ext.dependencies['gson']
     api rootProject.ext.dependencies['eventbus']
-    api rootProject.ext.dependencies['leakcanary']
+    //api rootProject.ext.dependencies['leakcanary']
     api rootProject.ext.dependencies['retrofit']
     api rootProject.ext.dependencies['retrofit-converter']
     api rootProject.ext.dependencies['rxjava3']
