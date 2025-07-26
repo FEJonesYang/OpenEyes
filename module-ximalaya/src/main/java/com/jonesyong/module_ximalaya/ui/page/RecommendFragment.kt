@@ -11,7 +11,6 @@ import com.jonesyong.module_ximalaya.databinding.FragmentXimalayaRecommendBindin
 import com.jonesyong.module_ximalaya.ui.adapters.RecommendRecyclerAdapter
 import com.jonesyong.module_ximalaya.ui.state.RecommendViewModel
 import com.ximalaya.ting.android.opensdk.model.album.Album
-import log.LogUtils
 
 /**
  *  喜马拉雅模块推荐界面

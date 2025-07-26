@@ -7,14 +7,10 @@ dependencyResolutionManagement {
 }
 rootProject.name = "OpenEyes"
 include ':app'
-include ':library-network'
-include ':library-base'
 include ':library-common'
+include ':library-core'
+include ':library_foundation'
 include ':module-home'
-include ':module-main'
 include ':module-community'
 include ':module-user'
-include ':library-servicemanager'
-include ':library-utils'
-include ':library-ui'
 include ':module-ximalaya'

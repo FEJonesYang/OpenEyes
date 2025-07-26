@@ -47,11 +47,8 @@ android {
 }
 
 dependencies {
-    api project(':library-base')
-    api project(':library-network')
-    api project(':library-utils')
-    api project(':library-servicemanager')
-    api project(':library-ui')
+    api project(':library-core')
+    api project(':library_foundation')
 
     // 阿里路由组件跳转,每一个 module 下都需要进行依赖
     annotationProcessor rootProject.ext.dependencies['arouter-compiler']

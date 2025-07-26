@@ -42,6 +42,12 @@ android {
 
 dependencies {
     implementation project(':library-common')
+    implementation project(':module-community')
+    implementation project(':module-user')
+    implementation project(':module-ximalaya')
+
+    implementation 'androidx.navigation:navigation-fragment-ktx:2.3.5'
+    implementation 'androidx.navigation:navigation-ui-ktx:2.3.5'
     implementation 'androidx.legacy:legacy-support-v4:1.0.0'
 
     // 阿里路由组件跳转

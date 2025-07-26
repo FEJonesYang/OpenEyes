@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.jonesyong.library_foundation.util.ImageUtil
 import com.jonesyong.module_ximalaya.R
 import com.ximalaya.ting.android.opensdk.model.album.Album
 

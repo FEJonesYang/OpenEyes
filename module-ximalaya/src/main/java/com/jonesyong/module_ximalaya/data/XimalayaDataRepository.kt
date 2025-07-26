@@ -1,12 +1,12 @@
 package com.jonesyong.module_ximalaya.data
 
+import com.jonesyong.library_foundation.util.log.LogUtils
 import com.ximalaya.ting.android.opensdk.constants.DTransferConstants
 import com.ximalaya.ting.android.opensdk.datatrasfer.CommonRequest
 import com.ximalaya.ting.android.opensdk.datatrasfer.IDataCallBack
 import com.ximalaya.ting.android.opensdk.model.album.Album
 import com.ximalaya.ting.android.opensdk.model.album.AlbumList
 import com.ximalaya.ting.android.opensdk.model.album.GussLikeAlbumList
-import log.LogUtils
 
 
 /**
