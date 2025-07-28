@@ -1,4 +1,4 @@
-apply from: '../module.build.gradle'
+apply from: '../module_config.gradle'
 apply plugin: 'kotlin-android'
 
 android {
@@ -41,15 +41,9 @@ android {
 }
 
 dependencies {
-    implementation project(':library-common')
-    implementation project(':module-community')
-    implementation project(':module-user')
-    implementation project(':module-ximalaya')
+    api project(':library-common')
 
     implementation 'androidx.navigation:navigation-fragment-ktx:2.3.5'
     implementation 'androidx.navigation:navigation-ui-ktx:2.3.5'
     implementation 'androidx.legacy:legacy-support-v4:1.0.0'
-
-    // 阿里路由组件跳转
-    annotationProcessor rootProject.ext.dependencies['arouter-compiler']
 }

@@ -5,7 +5,6 @@ import com.ximalaya.ting.android.opensdk.constants.DTransferConstants
 import com.ximalaya.ting.android.opensdk.datatrasfer.CommonRequest
 import com.ximalaya.ting.android.opensdk.datatrasfer.IDataCallBack
 import com.ximalaya.ting.android.opensdk.model.album.Album
-import com.ximalaya.ting.android.opensdk.model.album.AlbumList
 import com.ximalaya.ting.android.opensdk.model.album.GussLikeAlbumList
 
 

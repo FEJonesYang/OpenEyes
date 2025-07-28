@@ -1,14 +1,17 @@
 package com.jonesyong.module_home
 
 import android.os.Bundle
-import com.google.android.material.bottomnavigation.BottomNavigationView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
-import androidx.navigation.ui.NavigationUI.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
+import com.didi.drouter.annotation.Router
+import com.google.android.material.bottomnavigation.BottomNavigationView
+import com.jonesyong.library_common.host
+import com.jonesyong.library_common.scheme
 import com.jonesyong.module_home.databinding.ActivityMainBinding
 
+@Router(scheme = scheme, host = host, path = "/home")
 class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding

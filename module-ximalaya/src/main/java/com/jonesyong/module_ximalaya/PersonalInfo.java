@@ -1,14 +1,4 @@
-package com.jonesyong.library_base;
-
-import android.util.Log;
-
-import java.io.BufferedInputStream;
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.IOException;
-import java.io.InputStream;
-import java.util.Properties;
+package com.jonesyong.module_ximalaya;
 
 /**
  * @Author JonesYang

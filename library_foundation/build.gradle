@@ -1,0 +1,81 @@
+plugins {
+    id 'com.android.library'
+    id 'kotlin-android'
+}
+
+apply from: '../library_config.gradle'
+
+android {
+    compileSdk rootProject.ext.android['compileSdkVersion']
+
+    defaultConfig {
+        minSdk rootProject.ext.android['minSdkVersion']
+        targetSdk rootProject.ext.android['targetSdkVersion']
+        versionCode rootProject.ext.android['versionCode']
+        versionName rootProject.ext.android['versionName']
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+
+        ndk {
+            // 设置支持的SO库架构，打包失败的问题，详见SDK文档
+            abiFilters 'armeabi'/*, 'x86'*///, 'armeabi-v7a', 'x86_64', 'arm64-v8a'
+        }
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+
+    packagingOptions {
+        exclude 'META-INF/*'
+    }
+
+    dataBinding {
+        enabled = true
+    }
+
+}
+
+dependencies {
+    // Android 原生依赖
+    api rootProject.ext.androidx['androidx-appcompat']
+    api rootProject.ext.androidx['android-material']
+    api rootProject.ext.androidx['androidx-constraintlayout']
+    api rootProject.ext.androidx['junit']
+    api rootProject.ext.androidx['androidx.test.ext-junit']
+    api rootProject.ext.androidx['androidx.test.espresso']
+    api rootProject.ext.androidx['annotations']
+    api rootProject.ext.androidx['core-ktx']
+    api rootProject.ext.androidx['livedata-ktx']
+    api rootProject.ext.androidx['viewmodel-ktx']
+
+    // 协程
+    api rootProject.ext.androidx['kotlinx-coroutines']
+
+    // 第三方依赖导入
+    api rootProject.ext.dependencies['glide']
+    api rootProject.ext.dependencies['glide-compiler']
+    api rootProject.ext.dependencies['okhttp3']
+    api rootProject.ext.dependencies['okio']
+    api rootProject.ext.dependencies['gson']
+    api rootProject.ext.dependencies['eventbus']
+    //api rootProject.ext.dependencies['leakcanary']
+    api rootProject.ext.dependencies['retrofit']
+    api rootProject.ext.dependencies['retrofit-converter']
+    api rootProject.ext.dependencies['rxjava3']
+    api rootProject.ext.dependencies['adapter-rxjava3']
+    api rootProject.ext.dependencies['rxandroid3']
+
+}

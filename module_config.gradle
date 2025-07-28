@@ -8,12 +8,6 @@ if (isModule.toBoolean()) {
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-kapt'
 
-kapt {
-    arguments {
-        arg("AROUTER_MODULE_NAME", project.getName())
-    }
-}
-
 android {
     buildTypes {
         debug {
@@ -50,4 +44,8 @@ android {
     packagingOptions {
         resources.excludes.add("META-INF/*")
     }
+}
+
+dependencies {
+    api "io.github.didi:drouter-api:2.4.5"
 }
