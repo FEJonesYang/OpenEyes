@@ -1,9 +1,23 @@
 package com.jonesyong.module_ximalaya
 
-import androidx.lifecycle.ViewModel
+import androidx.lifecycle.MutableLiveData
+import androidx.lifecycle.viewModelScope
+import com.jonesyong.library_base.model.BaseViewModel
+import com.jonesyong.module_ximalaya.api.data.Categories
+import com.jonesyong.module_ximalaya.api.request.XimalayaRequest
+import kotlinx.coroutines.launch
 
-class XimalayaViewModel : ViewModel() {
+class XimalayaViewModel : BaseViewModel() {
 
-    val tabList = mutableListOf("推荐", "历史", "订阅")
+    private val ximalayaRequest = XimalayaRequest(this)
+
+    val tabList = MutableLiveData<MutableList<Categories>>()
+
+    fun loadCategories() {
+        viewModelScope.launch {
+            val data = ximalayaRequest.loadCategories()
+            tabList.value = data
+        }
+    }
 
 }

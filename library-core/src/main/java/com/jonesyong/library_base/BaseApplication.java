@@ -5,6 +5,7 @@ import android.app.Application;
 import android.content.Context;
 
 import com.didi.drouter.api.DRouter;
+import com.jonesyong.library_base.application.ApplicationProvider;
 import com.jonesyong.library_base.application.IApplicationProvider;
 
 import java.util.List;
@@ -28,6 +29,7 @@ public class BaseApplication extends Application {
     @Override
     public void onCreate() {
         super.onCreate();
+        ApplicationProvider.Companion.ensureContext(getApplicationContext());
         if (!mApplicationService.isEmpty()) {
             for (int i = 0; i < mApplicationService.size(); i++) {
                 mApplicationService.get(i).onCreate(this);

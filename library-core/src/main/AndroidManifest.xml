@@ -25,6 +25,13 @@
         android:requestLegacyExternalStorage="true"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.OpenEyes" />
+        android:theme="@style/Theme.OpenEyes">
+
+        <provider
+            android:name=".application.ApplicationProvider"
+            android:authorities="com.jonesyong.ApplicationProvider"
+            android:exported="true" />
+
+    </application>
 
 </manifest>
