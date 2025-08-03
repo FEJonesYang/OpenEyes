@@ -3,7 +3,6 @@ package com.jonesyong.library_foundation.util.view
 import android.animation.ObjectAnimator
 import android.animation.ValueAnimator
 import android.content.Context
-import android.view.View
 import android.view.animation.LinearInterpolator
 import android.widget.LinearLayout
 import androidx.annotation.StyleRes

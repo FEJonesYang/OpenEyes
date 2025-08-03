@@ -5,6 +5,7 @@ import android.view.View
 import com.google.android.material.tabs.TabLayoutMediator
 import com.jonesyong.library_base.BaseFragment
 import com.jonesyong.library_base.DataBindingConfig
+import com.jonesyong.library_foundation.util.view.AppCompatErrorView
 import com.jonesyong.module_ximalaya.databinding.FragmentXimalayaBinding
 
 class XimalayaFragment : BaseFragment<XimalayaViewModel>() {
@@ -47,7 +48,10 @@ class XimalayaFragment : BaseFragment<XimalayaViewModel>() {
         }
     }
 
-    override fun onDestroyView() {
-        super.onDestroyView()
-    }
+    override fun inflateErrorView(view: View): AppCompatErrorView? =
+        view.findViewById<AppCompatErrorView?>(R.id.network_error).apply {
+            setTryAgainListener {
+                vm.loadCategories()
+            }
+        }
 }

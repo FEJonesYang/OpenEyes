@@ -5,6 +5,7 @@ import okhttp3.OkHttpClient
 import retrofit2.Retrofit
 import retrofit2.adapter.rxjava3.RxJava3CallAdapterFactory
 import retrofit2.converter.gson.GsonConverterFactory
+import java.util.concurrent.TimeUnit
 
 object HttpServiceManager {
 
@@ -14,6 +15,9 @@ object HttpServiceManager {
         interceptors.forEach {
             build.addInterceptor(it)
         }
+        build.connectTimeout(10, TimeUnit.SECONDS)
+        build.readTimeout(10, TimeUnit.SECONDS)
+        build.writeTimeout(10, TimeUnit.SECONDS)
         return build.build()
     }
 

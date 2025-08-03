@@ -5,6 +5,7 @@ import android.view.View
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.jonesyong.library_base.BaseFragment
 import com.jonesyong.library_base.DataBindingConfig
+import com.jonesyong.library_foundation.util.view.AppCompatErrorView
 import com.jonesyong.module_ximalaya.BR
 import com.jonesyong.module_ximalaya.R
 import com.jonesyong.module_ximalaya.api.data.Albums
@@ -70,4 +71,11 @@ class RecommendFragment : BaseFragment<RecommendViewModel>() {
             mAdapter?.setDataList(it)
         }
     }
+
+    override fun inflateErrorView(view: View): AppCompatErrorView? =
+        view.findViewById<AppCompatErrorView?>(R.id.network_error).apply {
+            setTryAgainListener {
+                vm.requestRecommendAlbumList(categoryId)
+            }
+        }
 }

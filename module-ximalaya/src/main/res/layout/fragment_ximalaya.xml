@@ -37,5 +37,10 @@
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toBottomOf="@id/tab_ximalaya" />
 
+        <com.jonesyong.library_foundation.util.view.AppCompatErrorView
+            android:id="@+id/network_error"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

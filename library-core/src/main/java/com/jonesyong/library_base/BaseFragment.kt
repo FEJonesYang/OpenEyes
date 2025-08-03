@@ -5,6 +5,7 @@ import android.view.View
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import com.jonesyong.library_base.model.BaseViewModel
+import com.jonesyong.library_foundation.util.view.AppCompatErrorView
 import com.jonesyong.library_foundation.util.view.LoadingView
 
 
@@ -40,14 +41,15 @@ abstract class BaseFragment<VM : BaseViewModel> : DataBindingFragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         onSubscribeUi(view)
+        errorView = inflateErrorView(view)
     }
 
     open fun onSubscribeUi(view: View) {
         vm.error.observe(viewLifecycleOwner) {
             if (it) {
-
+                errorView?.show()
             } else {
-
+                errorView?.hide()
             }
         }
         vm.loading.observe(viewLifecycleOwner) {
@@ -59,9 +61,8 @@ abstract class BaseFragment<VM : BaseViewModel> : DataBindingFragment() {
         }
     }
 
-    open fun inflateLoadingView(): View? = null
-
-    open fun inflateErrorView(): View? = null
+    private var errorView: AppCompatErrorView? = null
+    open fun inflateErrorView(view: View): AppCompatErrorView? = null
 
     open fun parseParams() {}
 

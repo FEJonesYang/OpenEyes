@@ -17,15 +17,10 @@
         android:paddingBottom="75dp"
         tools:context=".ui.page.RecommendFragment">
 
-        <include
-            android:id="@+id/include_network_error"
-            layout="@layout/network_error_layout"
-            android:visibility="gone" />
-
-        <include
-            android:id="@+id/include_network_loading"
-            layout="@layout/network_loading_layout"
-            android:visibility="gone" />
+        <com.jonesyong.library_foundation.util.view.AppCompatErrorView
+            android:id="@+id/network_error"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recycler_recommend"

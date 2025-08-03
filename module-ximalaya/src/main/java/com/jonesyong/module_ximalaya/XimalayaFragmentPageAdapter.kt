@@ -21,7 +21,10 @@ class XimalayaFragmentPageAdapter(fragmentManager: FragmentManager, lifecycle: L
     private val dataList = mutableListOf<Categories>()
 
     @SuppressLint("NotifyDataSetChanged")
-    fun setData(data: List<Categories>) {
+    fun setData(data: List<Categories>?) {
+        if (data.isNullOrEmpty()) {
+            return
+        }
         if (dataList.isNotEmpty()) {
             dataList.clear()
         }

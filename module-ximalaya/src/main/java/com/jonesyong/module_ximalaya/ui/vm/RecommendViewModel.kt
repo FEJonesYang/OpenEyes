@@ -25,11 +25,12 @@ class RecommendViewModel : BaseViewModel() {
     // 请求推荐数据
     fun requestRecommendAlbumList(categoryId: Int) {
         viewModelScope.launch {
-            safeLaunch {
-                loading.value = true
-                val data = recommendRequest.requestRecommendAlbumList(categoryId)
-                recommendLiveData.value = data.albums
-                loading.value = false
+            beforeRequest()
+            val data = safeLaunch {
+                recommendRequest.requestRecommendAlbumList(categoryId)
+            }
+            afterRequest(data != null) {
+                recommendLiveData.value = data?.albums
             }
         }
     }
