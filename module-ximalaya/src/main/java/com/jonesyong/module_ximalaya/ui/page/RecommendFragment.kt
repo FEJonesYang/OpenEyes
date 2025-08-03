@@ -15,12 +15,12 @@ import com.jonesyong.module_ximalaya.ui.vm.RecommendViewModel
 /**
  *  喜马拉雅模块推荐界面
  */
-class RecommendFragment : BaseFragment() {
+class RecommendFragment : BaseFragment<RecommendViewModel>() {
 
     companion object {
         const val CATEGORY_ID = "category_id"
 
-        fun newInstance(categoryId: Long): BaseFragment {
+        fun newInstance(categoryId: Long): BaseFragment<RecommendViewModel> {
             val args = Bundle().apply {
                 putLong(CATEGORY_ID, categoryId)
             }
@@ -30,27 +30,26 @@ class RecommendFragment : BaseFragment() {
         }
     }
 
-    private lateinit var mStateModel: RecommendViewModel
     private var mAdapter: RecommendRecyclerAdapter<Albums>? = null
     private lateinit var mRecommendBinding: FragmentXimalayaRecommendBinding
 
     private var categoryId: Int = 0
 
     override fun initViewModel() {
-        mStateModel = getFragmentScopeViewModel(RecommendViewModel::class.java)
+        vm = getFragmentScopeViewModel(RecommendViewModel::class.java)
     }
 
     override fun getDataBindingConfig(): DataBindingConfig {
         return DataBindingConfig(
             R.layout.fragment_ximalaya_recommend,
             BR.vm,
-            mStateModel
+            vm
         ).addBindingParam(BR.adapter, RecommendRecyclerAdapter<Albums>())
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        mStateModel.requestRecommendAlbumList(categoryId)
+        vm.requestRecommendAlbumList(categoryId)
     }
 
     override fun parseParams() {
@@ -67,7 +66,7 @@ class RecommendFragment : BaseFragment() {
 
     override fun onSubscribeUi(view: View) {
         super.onSubscribeUi(view)
-        mStateModel.recommendLiveData.observe(viewLifecycleOwner) {
+        vm.recommendLiveData.observe(viewLifecycleOwner) {
             mAdapter?.setDataList(it)
         }
     }

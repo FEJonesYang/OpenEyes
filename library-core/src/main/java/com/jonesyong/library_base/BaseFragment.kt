@@ -4,9 +4,13 @@ import android.os.Bundle
 import android.view.View
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
+import com.jonesyong.library_base.model.BaseViewModel
+import com.jonesyong.library_foundation.util.view.LoadingView
 
 
-abstract class BaseFragment : DataBindingFragment() {
+abstract class BaseFragment<VM : BaseViewModel> : DataBindingFragment() {
+
+    open lateinit var vm: VM
 
     /**
      * 获取 Fragment 范围内的 ViewModel
@@ -26,9 +30,11 @@ abstract class BaseFragment : DataBindingFragment() {
     protected open fun <T : ViewModel?> getActivityScopeViewModel(modelClass: Class<T>): T =
         ViewModelProvider(requireActivity()).get(modelClass)
 
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         parseParams()
+        initViewModel()
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -36,7 +42,28 @@ abstract class BaseFragment : DataBindingFragment() {
         onSubscribeUi(view)
     }
 
-    open fun onSubscribeUi(view: View) {}
+    open fun onSubscribeUi(view: View) {
+        vm.error.observe(viewLifecycleOwner) {
+            if (it) {
+
+            } else {
+
+            }
+        }
+        vm.loading.observe(viewLifecycleOwner) {
+            if (it) {
+                LoadingView.show(context)
+            } else {
+                LoadingView.hide()
+            }
+        }
+    }
+
+    open fun inflateLoadingView(): View? = null
+
+    open fun inflateErrorView(): View? = null
 
     open fun parseParams() {}
+
+    open fun initViewModel() {}
 }

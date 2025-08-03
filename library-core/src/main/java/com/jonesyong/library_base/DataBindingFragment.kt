@@ -34,13 +34,6 @@ abstract class DataBindingFragment : Fragment() {
         mActivity = context as AppCompatActivity
     }
 
-    protected abstract fun initViewModel()
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        initViewModel()
-    }
-
     protected abstract fun getDataBindingConfig(): DataBindingConfig
 
     override fun onCreateView(

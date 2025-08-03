@@ -15,8 +15,10 @@ class XimalayaViewModel : BaseViewModel() {
 
     fun loadCategories() {
         viewModelScope.launch {
+            loading.value = true
             val data = ximalayaRequest.loadCategories()
             tabList.value = data
+            loading.value = false
         }
     }
 

@@ -6,6 +6,7 @@ import com.jonesyong.library_base.ktx.safeLaunch
 import com.jonesyong.library_base.model.BaseViewModel
 import com.jonesyong.module_ximalaya.api.data.Albums
 import com.jonesyong.module_ximalaya.api.request.RecommendRequest
+import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
 
@@ -25,8 +26,10 @@ class RecommendViewModel : BaseViewModel() {
     fun requestRecommendAlbumList(categoryId: Int) {
         viewModelScope.launch {
             safeLaunch {
+                loading.value = true
                 val data = recommendRequest.requestRecommendAlbumList(categoryId)
                 recommendLiveData.value = data.albums
+                loading.value = false
             }
         }
     }
