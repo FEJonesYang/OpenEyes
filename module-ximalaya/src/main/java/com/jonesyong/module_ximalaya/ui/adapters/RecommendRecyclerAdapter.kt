@@ -10,6 +10,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.jonesyong.library_foundation.util.ImageUtil
 import com.jonesyong.module_ximalaya.R
 import com.jonesyong.module_ximalaya.api.data.Albums
+import com.jonesyong.module_ximalaya.ui.page.AlbumsDetailActivity
 
 /**
  * @author: Jony
@@ -32,6 +33,9 @@ class RecommendRecyclerAdapter<T> : RecyclerViewAdapter<T, RecommendRecyclerAdap
         // 圆角封面
         ImageUtil.loadRoundedImage(holder.itemView.context, album.cover_url_small, 20)
             .into(holder.mImageCover!!)
+        holder.itemView.setOnClickListener {
+            AlbumsDetailActivity.start(holder.itemView.context, album.id)
+        }
     }
 
     class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {

@@ -1,7 +1,11 @@
 package com.jonesyong.library_base
 
 import android.os.Bundle
+import android.view.LayoutInflater
 import android.view.View
+import android.view.ViewGroup
+import androidx.annotation.LayoutRes
+import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import com.jonesyong.library_base.model.BaseViewModel
@@ -9,7 +13,7 @@ import com.jonesyong.library_foundation.util.view.AppCompatErrorView
 import com.jonesyong.library_foundation.util.view.LoadingView
 
 
-abstract class BaseFragment<VM : BaseViewModel> : DataBindingFragment() {
+abstract class BaseFragment<VM : BaseViewModel> : Fragment() {
 
     open lateinit var vm: VM
 
@@ -38,10 +42,19 @@ abstract class BaseFragment<VM : BaseViewModel> : DataBindingFragment() {
         initViewModel()
     }
 
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
-        onSubscribeUi(view)
-        errorView = inflateErrorView(view)
+    override fun onCreateView(
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View? {
+        return inflater.inflate(getInflateId(),null,false)
+    }
+
+    override fun onViewCreated(root: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(root, savedInstanceState)
+        initView(root)
+        onSubscribeUi(root)
+        errorView = inflateErrorView(root)
     }
 
     open fun onSubscribeUi(view: View) {
@@ -66,5 +79,9 @@ abstract class BaseFragment<VM : BaseViewModel> : DataBindingFragment() {
 
     open fun parseParams() {}
 
+    abstract fun getInflateId() : Int
+
     open fun initViewModel() {}
+
+    open fun initView(root: View) {}
 }

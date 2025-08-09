@@ -24,7 +24,7 @@ data class AlbumsData(
 ) : Serializable
 
 data class Albums(
-    val id: Long,
+    val id: Int,
     val kind: String,
     val category_id: Long,
     val album_title: String,

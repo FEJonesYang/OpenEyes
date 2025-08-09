@@ -1,6 +1,7 @@
 package com.jonesyong.module_ximalaya.api
 
 import com.jonesyong.module_ximalaya.api.data.AlbumsData
+import com.jonesyong.module_ximalaya.api.data.AlbumsDetailData
 import com.jonesyong.module_ximalaya.api.data.Categories
 import com.jonesyong.module_ximalaya.api.data.TagData
 import retrofit2.http.GET
@@ -22,6 +23,9 @@ interface XimalayaService {
         @Query("category_id") id: Int,
         @Query("calc_dimension") type: Int
     ): AlbumsData
+
+    @GET("/albums/browse")
+    suspend fun fetchAlbumsBrowse(@Query("album_id") albumId: Int?): AlbumsDetailData
 }
 
 

@@ -2,8 +2,6 @@ package com.jonesyong.module_ximalaya
 
 import android.annotation.SuppressLint
 import androidx.fragment.app.Fragment
-import androidx.fragment.app.FragmentManager
-import androidx.lifecycle.Lifecycle
 import androidx.viewpager2.adapter.FragmentStateAdapter
 import com.jonesyong.module_ximalaya.api.data.Categories
 import com.jonesyong.module_ximalaya.ui.page.RecommendFragment
@@ -14,8 +12,8 @@ import com.jonesyong.module_ximalaya.ui.page.RecommendFragment
  * @date: 2022/5/11
  * @description:
  */
-class XimalayaFragmentPageAdapter(fragmentManager: FragmentManager, lifecycle: Lifecycle) :
-    FragmentStateAdapter(fragmentManager, lifecycle) {
+class XimalayaFragmentPageAdapter(fragment: Fragment) :
+    FragmentStateAdapter(fragment) {
 
 
     private val dataList = mutableListOf<Categories>()

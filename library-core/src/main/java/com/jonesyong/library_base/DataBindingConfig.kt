@@ -3,7 +3,11 @@ package com.jonesyong.library_base
 import android.util.SparseArray
 import androidx.lifecycle.ViewModel
 
-class DataBindingConfig(val layout: Int, val vmVariableId: Int, val stateViewModel: ViewModel) {
+class DataBindingConfig(
+    val layout: Int,
+    val vmVariableId: Int? = null,
+    val stateViewModel: ViewModel? = null
+) {
 
     private var _bindingParams = SparseArray<Any?>()
 

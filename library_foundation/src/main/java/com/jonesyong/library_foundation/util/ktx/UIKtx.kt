@@ -4,7 +4,7 @@ import android.graphics.Outline
 import android.view.View
 import android.view.ViewOutlineProvider
 
-fun View.setRoundCorner(radiusDp: Float) {
+fun View.setRoundCorner(radiusDp: Float = 24f) {
     val radius = radiusDp * resources.displayMetrics.density
     outlineProvider = object : ViewOutlineProvider() {
         override fun getOutline(view: View, outline: Outline) {

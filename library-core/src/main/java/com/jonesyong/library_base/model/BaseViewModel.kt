@@ -12,11 +12,11 @@ abstract class BaseViewModel : ViewModel() {
         error.value = false
     }
 
-    fun afterRequest(success: Boolean = true, block: () -> Unit) {
+    fun afterRequest(success: Boolean = true, notify: () -> Unit) {
         loading.value = false
         if (success) {
             error.value = false
-            block.invoke()
+            notify.invoke()
         } else {
             error.value = true
         }

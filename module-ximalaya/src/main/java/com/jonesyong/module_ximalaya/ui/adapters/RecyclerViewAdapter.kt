@@ -16,7 +16,10 @@ abstract class RecyclerViewAdapter<T, VH : RecyclerView.ViewHolder> : RecyclerVi
     protected val mDataList = mutableListOf<T>()
 
     @SuppressLint("NotifyDataSetChanged")
-    fun setDataList(list: List<T>) {
+    fun setDataList(list: List<T>?) {
+        if (list.isNullOrEmpty()) {
+            return
+        }
         if (mDataList.isNotEmpty()) {
             mDataList.clear()
         }

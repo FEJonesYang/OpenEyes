@@ -1,36 +1,30 @@
 package com.jonesyong.module_ximalaya
 
-import android.os.Bundle
 import android.view.View
+import androidx.viewpager2.widget.ViewPager2
+import com.google.android.material.tabs.TabLayout
 import com.google.android.material.tabs.TabLayoutMediator
 import com.jonesyong.library_base.BaseFragment
-import com.jonesyong.library_base.DataBindingConfig
 import com.jonesyong.library_foundation.util.view.AppCompatErrorView
-import com.jonesyong.module_ximalaya.databinding.FragmentXimalayaBinding
 
 class XimalayaFragment : BaseFragment<XimalayaViewModel>() {
 
-    private lateinit var mDataBinding: FragmentXimalayaBinding
     private var adapter: XimalayaFragmentPageAdapter? = null
+    private var tabLayout: TabLayout? = null
+    private var viewPager: ViewPager2? = null
 
     override fun initViewModel() {
+        super.initViewModel()
         vm = getFragmentScopeViewModel(XimalayaViewModel::class.java)
         vm.loadCategories()
     }
 
-    override fun getDataBindingConfig(): DataBindingConfig {
-        return DataBindingConfig(R.layout.fragment_ximalaya, BR.vm, vm)
-            .addBindingParam(
-                BR.adapter,
-                XimalayaFragmentPageAdapter(parentFragmentManager, lifecycle)
-            )
-    }
-
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
-        mDataBinding = mBinding as FragmentXimalayaBinding
-        adapter = mBindingConfig.bindingParams.get(BR.adapter) as XimalayaFragmentPageAdapter
-        mDataBinding.viewPagerXimalaya.adapter = adapter
+    override fun initView(root: View) {
+        super.initView(root)
+        adapter = XimalayaFragmentPageAdapter(this)
+        tabLayout = root.findViewById(R.id.tab_ximalaya)
+        viewPager = root.findViewById(R.id.viewPager_ximalaya)
+        viewPager?.adapter = adapter
     }
 
     override fun onSubscribeUi(view: View) {
@@ -40,8 +34,8 @@ class XimalayaFragment : BaseFragment<XimalayaViewModel>() {
 
             // 关联 ViewPager 和 TabLayout
             TabLayoutMediator(
-                mDataBinding.tabXimalaya,
-                mDataBinding.viewPagerXimalaya
+                tabLayout!!,
+                viewPager!!
             ) { tab, position ->
                 tab.text = vm.tabList.value?.get(position)?.category_name
             }.attach()
@@ -54,4 +48,6 @@ class XimalayaFragment : BaseFragment<XimalayaViewModel>() {
                 vm.loadCategories()
             }
         }
+
+    override fun getInflateId(): Int = R.layout.fragment_ximalaya
 }
