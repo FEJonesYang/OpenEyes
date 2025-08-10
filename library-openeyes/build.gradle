@@ -7,5 +7,5 @@ apply from: '../library_config.gradle'
 
 
 dependencies {
-    api project(':library_foundation')
+    api project(':library-common')
 }

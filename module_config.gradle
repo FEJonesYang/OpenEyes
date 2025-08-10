@@ -9,6 +9,31 @@ apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-kapt'
 
 android {
+    compileSdk rootProject.ext.android['compileSdkVersion']
+
+    defaultConfig {
+        minSdk rootProject.ext.android['minSdkVersion']
+        targetSdk rootProject.ext.android['targetSdkVersion']
+        versionCode rootProject.ext.android['versionCode']
+        versionName rootProject.ext.android['versionName']
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+
+        if (isModule.toBoolean()) {
+            applicationId "com.jonesyong.mudule_user"
+        }
+
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+
     buildTypes {
         debug {
             minifyEnabled false
