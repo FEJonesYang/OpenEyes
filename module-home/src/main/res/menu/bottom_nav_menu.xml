@@ -8,7 +8,7 @@
 
     <item
         android:id="@id/navigation_community"
-        android:icon="@mipmap/eyes"
+        android:icon="@mipmap/community"
         android:title="@string/title_community" />
 
     <item
