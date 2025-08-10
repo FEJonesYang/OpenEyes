@@ -12,12 +12,6 @@
         tools:layout="@layout/fragment_home" />
 
     <fragment
-        android:id="@+id/navigation_ximalaya"
-        android:name="com.jonesyong.module_ximalaya.XimalayaFragment"
-        android:label="@string/title_ximalaya"
-        tools:layout="@layout/fragment_ximalaya" />
-
-    <fragment
         android:id="@+id/navigation_community"
         android:name="com.jonesyong.module_community.CommunityFragment"
         android:label="@string/title_community"

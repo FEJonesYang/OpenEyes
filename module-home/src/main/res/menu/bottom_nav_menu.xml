@@ -7,11 +7,6 @@
         android:title="@string/title_home" />
 
     <item
-        android:id="@+id/navigation_ximalaya"
-        android:icon="@drawable/ic_dashboard_black_24dp"
-        android:title="@string/title_ximalaya" />
-
-    <item
         android:id="@id/navigation_community"
         android:icon="@drawable/ic_home_black_24dp"
         android:title="@string/title_community" />

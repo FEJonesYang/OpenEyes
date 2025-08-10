@@ -52,5 +52,4 @@ dependencies {
     implementation project(':module-home')
     implementation project(':module-community')
     implementation project(':module-user')
-    implementation project(':module-ximalaya')
 }
