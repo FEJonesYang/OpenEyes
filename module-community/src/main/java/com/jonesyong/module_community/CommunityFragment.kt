@@ -1,45 +1,49 @@
 package com.jonesyong.module_community
 
-import android.os.Bundle
-import android.view.LayoutInflater
 import android.view.View
-import android.view.ViewGroup
-import android.widget.TextView
-import androidx.fragment.app.Fragment
-import androidx.lifecycle.Observer
-import androidx.lifecycle.ViewModelProvider
-import com.jonesyong.module_community.databinding.FragmentCommunityBinding
+import androidx.viewpager2.widget.ViewPager2
+import com.google.android.material.tabs.TabLayout
+import com.google.android.material.tabs.TabLayoutMediator
+import com.jonesyong.library_base.BaseFragment
+import com.jonesyong.module_community.adapter.CommunityAdapter
+
 
 /**
  * @Author JonesYang
  * @Date 2022-02-07
  * @Description
  */
-class CommunityFragment : Fragment() {
+class CommunityFragment : BaseFragment<CommunityViewModel>() {
 
-    private lateinit var communityViewModel: CommunityViewModel
-    private var _binding: FragmentCommunityBinding? = null
+    private var mTabLayout: TabLayout? = null
+    private var mViewPager: ViewPager2? = null
+    private var mAdapter: CommunityAdapter? = null
 
-    private val binding get() = _binding!!
+    override fun getInflateId(): Int = R.layout.fragment_community
 
-    override fun onCreateView(
-        inflater: LayoutInflater,
-        container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
-        communityViewModel = ViewModelProvider(this).get(CommunityViewModel::class.java)
-        _binding = FragmentCommunityBinding.inflate(inflater, container, false)
-        val root: View = binding.root
-
-        val textView: TextView = binding.textCommunity
-        communityViewModel.text.observe(viewLifecycleOwner, Observer {
-            textView.text = it
-        })
-        return root
+    override fun initViewModel() {
+        super.initViewModel()
+        vm = getFragmentScopeViewModel(CommunityViewModel::class.java)
+        vm.fetchPageList()
     }
 
-    override fun onDestroy() {
-        super.onDestroy()
-        _binding = null
+    override fun initView(root: View) {
+        super.initView(root)
+        mTabLayout = root.findViewById(R.id.community_tab)
+        mViewPager = root.findViewById(R.id.community_fragment_container)
+        mAdapter = CommunityAdapter(this)
+        mViewPager?.adapter = mAdapter
+    }
+
+    override fun onSubscribeUi(view: View) {
+        super.onSubscribeUi(view)
+        vm.pageList.observe(viewLifecycleOwner) { pageList ->
+            mAdapter?.setData(pageList)
+            TabLayoutMediator(
+                mTabLayout!!, mViewPager!!
+            ) { tab: TabLayout.Tab, position: Int ->
+                tab.setText(pageList[position].name)
+            }.attach()
+        }
     }
 }

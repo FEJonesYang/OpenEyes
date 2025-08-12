@@ -1,19 +1,25 @@
 package com.jonesyong.module_community
 
-import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
-import androidx.lifecycle.ViewModel
+import com.jonesyong.library_base.model.BaseViewModel
+import java.io.Serializable
 
 /**
  * @Author JonesYang
  * @Date 2022-02-07
  * @Description
  */
-class CommunityViewModel : ViewModel() {
+class CommunityViewModel : BaseViewModel() {
 
+    val pageList = MutableLiveData<MutableList<PageData>>()
 
-    private val _text = MutableLiveData<String>().apply {
-        value = "This is community Fragment"
+    fun fetchPageList() {
+        pageList.value = mutableListOf<PageData>().apply {
+            add(PageData(name = "推荐", type = "recommend"))
+            add(PageData(name = "关注", type = "follow"))
+        }
     }
-    val text: LiveData<String> = _text
+
 }
+
+class PageData(val name: String, val type: String) : Serializable

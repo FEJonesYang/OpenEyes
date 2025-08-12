@@ -6,7 +6,7 @@ import android.view.View
 import android.widget.LinearLayout
 import com.jonesyong.library_foundation.R
 
-class AppCompatErrorView @JvmOverloads constructor(
+open class AppCompatErrorView @JvmOverloads constructor(
     context: Context,
     attrs: AttributeSet? = null,
     defStyleAttr: Int = 0

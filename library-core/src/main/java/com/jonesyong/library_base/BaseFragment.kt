@@ -32,8 +32,8 @@ abstract class BaseFragment<VM : BaseViewModel> : Fragment() {
     /**
      * 获取 Activity 范围内的 ViewModel
      */
-    protected open fun <T : ViewModel?> getActivityScopeViewModel(modelClass: Class<T>): T =
-        ViewModelProvider(requireActivity()).get(modelClass)
+    protected open fun <T : ViewModel?> getActivityScopeViewModel(modelClass: Class<T>): T? =
+        activity?.let { ViewModelProvider(it).get(modelClass) }
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
