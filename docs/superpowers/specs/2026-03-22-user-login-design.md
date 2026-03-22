@@ -81,6 +81,7 @@ class LoginRequest(vm: LoginViewModel) : BaseRequest<LoginViewModel>(vm) {
 
 - 继承 `BaseViewModel`，`loadData()` 为空实现（登录无需预加载数据）
 - `loginSuccess: MutableLiveData<UserInfo>` — 登录成功时发送
+- `loginError: MutableLiveData<String>` — 业务错误时发送（如账号密码错误，`errorCode != 0`）；注意 `vm.error` 是 Boolean 无法携带错误信息，故单独定义
 - `fun login(username: String, password: String)` — 调用 `LoginRequest`，通过 `beforeRequest()` / `afterRequest()` 管理 loading/error 状态
 - 登录成功后调用 `UserStore.saveUser(username)`
 
