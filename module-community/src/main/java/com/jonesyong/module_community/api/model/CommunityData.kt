@@ -2,16 +2,35 @@ package com.jonesyong.module_community.api.model
 
 import java.io.Serializable
 
-class FollowData(val type: String, val data: Data, val id: Int) : Serializable
+class CommunityData(val type: String, val data: Data, val id: Int) : Serializable
 
-class Data(val dataType: String, val header: Header, val content: Content) : Serializable
+class Data(
+    val dataType: String,
+    val header: Header,
+    val content: Content,
+    val itemList: MutableList<ItemData>,
+    val count: Int
+) : Serializable
+
+class ItemData(val type: String, val data: ItemListData, val id: Int) : Serializable
+
+class ItemListData(
+    val dataType: String,
+    val id: Int,
+    val title: String,
+    val subTitle: String,
+    val bgPicture: String,
+    val actionUrl:String,
+    val description:String,
+    val image:String,
+) : Serializable
 
 class Header(
     val id: Int,
     val actionUrl: String,
     val icon: String,
     val iconType: String,
-    val time: Int,
+    val time: Long,
     val showHateVideo: Boolean,
     val followType: String,
     val issuerName: String,
@@ -39,7 +58,7 @@ class ContentData(
     val playUrl: String,
     val duration: Long,
     val webUrl: WebUrl,
-    val releaseTime: Int,
+    val releaseTime: Long,
     val playInfo: List<Any>,
     val descriptionEditor: String,
 ) : Serializable
@@ -56,7 +75,7 @@ class Author(
     val icon: String,
     val name: String,
     val description: String,
-    val latestReleaseTime: Int,
+    val latestReleaseTime: Long,
     val videoNum: Int,
 ) : Serializable
 

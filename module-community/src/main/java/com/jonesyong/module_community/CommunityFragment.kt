@@ -24,7 +24,7 @@ class CommunityFragment : BaseFragment<CommunityViewModel>() {
     override fun initViewModel() {
         super.initViewModel()
         vm = getFragmentScopeViewModel(CommunityViewModel::class.java)
-        vm.fetchPageList()
+        vm.loadData()
     }
 
     override fun initView(root: View) {

@@ -13,7 +13,7 @@ class CommunityViewModel : BaseViewModel() {
 
     val pageList = MutableLiveData<MutableList<PageData>>()
 
-    fun fetchPageList() {
+    override fun loadData() {
         pageList.value = mutableListOf<PageData>().apply {
             add(PageData(name = "推荐", type = "recommend"))
             add(PageData(name = "关注", type = "follow"))

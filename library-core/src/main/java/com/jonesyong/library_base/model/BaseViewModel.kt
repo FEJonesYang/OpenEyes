@@ -21,4 +21,6 @@ abstract class BaseViewModel : ViewModel() {
             error.value = true
         }
     }
+
+    abstract fun loadData()
 }
