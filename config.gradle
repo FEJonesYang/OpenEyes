@@ -3,7 +3,7 @@ ext {
     android = [
             compileSdkVersion: 31,
             buildToolsVersion: '30.0.2',
-            minSdkVersion    : 21,
+            minSdkVersion    : 23,
             targetSdkVersion : 31,
             applicationId    : "com.jonesyong.openeyes",
             versionCode      : 1,

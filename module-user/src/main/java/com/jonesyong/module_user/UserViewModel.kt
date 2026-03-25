@@ -1,13 +1,11 @@
 package com.jonesyong.module_user
 
-import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
-import androidx.lifecycle.ViewModel
+import com.jonesyong.library_base.model.BaseViewModel
 
-class UserViewModel : ViewModel() {
+class UserViewModel : BaseViewModel() {
 
-    private val _text = MutableLiveData<String>().apply {
-        value = "This is user Fragment"
-    }
-    val text: LiveData<String> = _text
+    val username = MutableLiveData<String?>()
+
+    override fun loadData() {}
 }

@@ -6,6 +6,8 @@ import android.content.ContentValues
 import android.content.Context
 import android.database.Cursor
 import android.net.Uri
+import com.jonesyong.library_base.net.PersistentCookieJar
+import com.jonesyong.library_foundation.util.net.HttpServiceManager
 
 class ApplicationProvider : ContentProvider() {
 
@@ -26,6 +28,7 @@ class ApplicationProvider : ContentProvider() {
 
     override fun onCreate(): Boolean {
         ensureContext(context)
+        HttpServiceManager.cookieJar = PersistentCookieJar(ctx!!)
         return true
     }
 
